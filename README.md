@@ -1,5 +1,5 @@
 # Automata
-Automata Conversion
+
 Automata Conversions algorithms in C++
 <ul>
   <li>epsilon-NFA to NFA</li>
