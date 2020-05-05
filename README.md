@@ -3,7 +3,6 @@
 Automata Conversions algorithms in C++
 <ul>
   <li>epsilon-NFA to NFA</li>
-<li>epsilon-NFA to DFA</li>
 <li>NFA to DFA</li>
 <li>Conversions also can obtain convert to DFA Minimalistic form.</li>
   </ul>
