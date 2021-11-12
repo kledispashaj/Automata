@@ -73,25 +73,25 @@ int main(){
             cin >> t[i][j];
         }
     }
-    //find recheable states
-    set <int> recheable;
-    recheable.insert(0);
+    //find reachable states
+    set <int> reachable;
+    reachable.insert(0);
     int s1=1;
     int s2=0;
 
     while(s1!=s2){
-        s1=recheable.size();
+        s1=reachable.size();
         set <int> :: iterator itr;
-        for (itr = recheable.begin(); itr != recheable.end(); ++itr){
+        for (itr = reachable.begin(); itr != reachable.end(); ++itr){
             for (int i = 0; i < m; i++) {
-                recheable.insert(t[*itr][i]);
+                reachable.insert(t[*itr][i]);
             }
         }
-        s2=recheable.size();
+        s2=reachable.size();
     }
-    //print recheable states
+    //print reachable states
     set <int> :: iterator itr;
-    for (itr = recheable.begin(); itr != recheable.end(); ++itr){
+    for (itr = reachable.begin(); itr != reachable.end(); ++itr){
         cout<<*itr<<" ";
         }
 
@@ -131,7 +131,7 @@ int main(){
     //insert unmarked states to equivalent classes table
     for (int k = 0; k < n; k++) {
         for (int i = 0; i < k; i++) {
-            if (!marked[k][i]&&(recheable.find(k) != recheable.end())&&(recheable.find(i) != recheable.end())){
+            if (!marked[k][i]&&(reachable.find(k) != reachable.end())&&(reachable.find(i) != reachable.end())){
                 int a =check(k);
                 int b= check(i);
                 if(a==b){
@@ -151,7 +151,7 @@ int main(){
         }
     }
     //insert remaining states
-    for (itr = recheable.begin(); itr != recheable.end(); ++itr){
+    for (itr = reachable.begin(); itr != reachable.end(); ++itr){
         if(check(*itr)==-1)
             ec[total++].push_back(*itr);
     }
@@ -175,5 +175,4 @@ int main(){
 
     return 0;
 }
-
 
